@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franco MV - Portfolio</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">F</a>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="/placeholder.svg?height=400&width=400" alt="me" class="profile-img">
+                <div class="hero-text">
+                    <h1>Franco</h1>
+                    <p class="subtitle">BS Computer Science</p>
+                    <p class="about-text">Hi, I'm Franco Miguel A. Villamor, a passionate student with a dream of becoming a deep learning engineer. I specialize mostly in Python.</p>
+                    <p class="about-text">When I'm not coding, I'm playing games and guitar.</p>
+                    <div class="hero-links">
+                        <div class="social-links">
+                            <a href="https://github.com/FTsune" aria-label="GitHub"><i data-lucide="github"></i></a>
+                            <a href="https://www.linkedin.com/in/franco-miguel-villamor-b58383337" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+                        </div>
+                        <button class="btn">Download CV</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="static/images/brewguard.png" alt="BrewGuard">
+                        <h3>BrewGuard</h3>
+                        <p>A coffee leaf classification and disease detection web app.</p>
+                        <div class="project-links">
+                            <a href="https://brewguard.streamlit.app" class="btn btn-outline link-no-underline" target="_blank">View Demo</a>
+                            <a href="https://github.com/FTsune/kape" class="btn btn-outline link-no-underline" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="static/images/anime.png" alt="anime">
+                        <h3>RU Seasonal Voting System</h3>
+                        <p>A seasonal anime voting system app made with Django.</p>
+                        <div class="project-links">
+                            <button class="btn btn-outline">View Demo</button>
+                            <a href="https://github.com/FTsune/Anime-Voting-System" class="btn btn-outline link-no-underline" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="static/images/cinema.jpg" alt="cinema">
+                        <h3>Uncianood Cinema Booking</h3>
+                        <p>A cinema booking system app made with Visual Basic.</p>
+                        <div class="project-links">
+                            <button class="btn btn-outline">View Demo</button>
+                            <a href="https://github.com/FTsune/Cinema-Booking-System" class="btn btn-outline link-no-underline" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="https://github.com/FTsune" class="view-more-link" target="_blank">
+                        <img src="static/images/github-icon.webp" alt="GitHub Icon" class="github-icon">
+                        View more on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>        
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Franco Miguel Villamor</p>
+        </div>
+    </footer>
+
+    <script src="static/scripts.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
