@@ -102,7 +102,7 @@ nav .container {
     background: 
         radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.4) 0%, transparent 30%),
         radial-gradient(circle at 80% 80%, rgba(0, 0, 255, 0.4) 0%, transparent 30%),
-        #1d1d1d;
+        black;
     background-size: 200% 200%;
     animation: moveGradient 10s ease infinite;
     color: var(--text-color);
