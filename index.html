@@ -11,6 +11,7 @@
         <div class="container">
             <a href="#" class="logo">F</a>
             <ul class="nav-links">
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -43,6 +44,34 @@
     </header>
 
     <main>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-column">
+                        <h3><i data-lucide="code"></i> Skills</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Data Science</li>
+                            <li>Machine/Deep Learning</li>
+                            <li>C#</li>
+                            <li>Java</li>
+                        </ul>
+                    </div>
+                    <div class="about-column">
+                        <h3><i data-lucide="award"></i> Achievements</h3>
+                        <ul>
+                            <li>Academic Year 2021-2022 Dean's Lister</li>
+                            <li>Academic Year 2022-2023 2nd Semester Dean's Lister</li>
+                            <li>Academic Year 2023-2024 President's Lister</li>
+                            <li>Certified CompTIA ITF+ 2024 Exam Passer</li>
+                            <li>Top 15 Finalist, DICT IV-A Regional Pitching Competition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects">
             <div class="container">
                 <h2>My Projects</h2>
@@ -50,7 +79,7 @@
                     <div class="project-card">
                         <img src="static/images/brewguard.png" alt="BrewGuard">
                         <h3>BrewGuard</h3>
-                        <p>A coffee leaf classification and disease detection web app.</p>
+                        <p>A coffee leaf classification and disease detection web app made with Streamlit.</p>
                         <div class="project-links">
                             <a href="https://brewguard.streamlit.app" class="btn btn-outline link-no-underline" target="_blank">View Demo</a>
                             <a href="https://github.com/FTsune/kape" class="btn btn-outline link-no-underline" target="_blank">GitHub</a>
@@ -85,12 +114,16 @@
         <section id="contact" class="contact">
             <div class="container">
                 <h2>Get In Touch</h2>
-                <form id="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:villamofranco16@gmail.com">villamorfranco16@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="phone"></i>
+                        <a href="tel:09297641848">0929 - 764 - 1848</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

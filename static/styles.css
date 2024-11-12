@@ -193,6 +193,65 @@ section h2 {
     color: transparent;  /* Make the text color transparent to show the gradient */
 }
 
+/* About Section */
+.about {
+    background-color: var(--surface-color);
+    padding: 4rem 0;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    background: linear-gradient(to right, red, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-column {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-column h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-column h3 i {
+    color: var(--secondary-color);
+}
+
+.about-column ul {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.about-column li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.about-column li::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: -1rem;
+}
+
 /* Projects Section */
 .project-grid {
     display: grid;
@@ -264,29 +323,45 @@ section h2 {
 /* Contact Section */
 .contact {
     background-color: var(--surface-color);
+    padding: 4rem 0;
 }
 
-form {
+.contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    background: linear-gradient(to right, red, blue);
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-info {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-input,
-textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid var(--muted-color);
-    border-radius: 4px;
-    background-color: var(--card-bg-color);
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.contact-item a {
     color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
+.contact-item a:hover {
+    color: var(--primary-color);
 }
 
 /* Footer */
@@ -352,6 +427,14 @@ footer {
         display: none;
     }
 
+    .about-content {
+        flex-direction: row;
+    }
+
+    .about-column {
+        flex: 1;
+    }
+
     .hero-content {
         flex-direction: row;
         text-align: left;
@@ -376,6 +459,12 @@ footer {
 
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-info {
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
     }
 }
 
