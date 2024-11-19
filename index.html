@@ -15,9 +15,15 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <i data-lucide="menu"></i>
-            </button>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <i data-lucide="sun" class="theme-icon light-icon"></i>
+                    <i data-lucide="moon" class="theme-icon dark-icon"></i>
+                </button>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -74,7 +80,11 @@
 
         <section id="projects" class="projects">
             <div class="container">
-                <h2>My Projects</h2>
+                <h2>Projects</h2>
+                <p class="projects-description">
+                    Explore a selection of projects demonstrating a variety of skills and technologies, 
+                    from web applications to desktop solutions, many of which were created in collaboration 
+                    with talented group members.</p>
                 <div class="project-grid">
                     <div class="project-card">
                         <img src="static/images/brewguard.png" alt="BrewGuard">
@@ -83,6 +93,15 @@
                         <div class="project-links">
                             <a href="https://brewguard.streamlit.app" class="btn btn-outline link-no-underline" target="_blank">View Demo</a>
                             <a href="https://github.com/FTsune/kape" class="btn btn-outline link-no-underline" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="static/images/snapfolia.png" alt="Snapfolia">
+                        <h3>Snapfolia</h3>
+                        <p>A leaf classification web app made by BSCS students.</p>
+                        <div class="project-links">
+                            <a href="https://trees.firstasia.edu.ph/" class="btn btn-outline link-no-underline" target="_blank">View Demo</a>
+                            <a href="https://github.com/CHlNlTO/snapfolia" class="btn btn-outline link-no-underline" target="_blank">GitHub</a>
                         </div>
                     </div>
                     <div class="project-card">

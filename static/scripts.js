@@ -31,6 +31,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            document.body.classList.remove('light-theme');
+        } else {
+            document.body.classList.add('light-theme');
+        }
+        localStorage.setItem('theme', theme);
+    }
+
+    // Check for saved theme preference or use the system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
+    }
+
+    // Toggle theme when the button is clicked
+    themeToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('light-theme')) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    });
+
+    // Listen for changes in system theme preference
+    prefersDarkScheme.addEventListener('change', (e) => {
+        setTheme(e.matches ? 'dark' : 'light');
+    });
+
+    // Navbar blur effect on scroll
+    const nav = document.querySelector('nav');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
     // Initialize Lucide icons
     lucide.createIcons();
 });
