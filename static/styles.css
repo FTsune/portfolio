@@ -188,17 +188,13 @@ body.light-theme .nav-links a:hover {
     z-index: 1;
 }
 
-@keyframes moveGradient {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
+/* Animations for different elements */
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    animation: fadeIn 1s ease-out;
 }
 
 .profile-img {
@@ -208,6 +204,13 @@ body.light-theme .nav-links a:hover {
     object-fit: cover;
     margin-bottom: 2rem;
     border: 1px solid darkred;
+    animation: profilePop 1s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
 }
 
 .hero-text {
@@ -218,13 +221,20 @@ body.light-theme .nav-links a:hover {
     font-size: 3rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInRight 0.8s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
 }
 
 .hero .subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    opacity: 0.8;
+    opacity: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: slideInRight 0.8s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
 }
 
 .about-text {
@@ -232,6 +242,10 @@ body.light-theme .nav-links a:hover {
     font-size: 1rem;
     line-height: 1.6;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
 }
 
 .hero-links {
@@ -239,6 +253,10 @@ body.light-theme .nav-links a:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
 }
 
 .social-links {
@@ -249,11 +267,74 @@ body.light-theme .nav-links a:hover {
     color: var(--text-color);
     font-size: 24px;
     margin: 0 0.5rem;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
 }
 
 .social-links a:hover {
-    opacity: 0.8;
+    transform: translateY(-3px);
+    color: #ff4444;
+}
+
+.btn {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+}
+
+/* Keyframe Animations */
+@keyframes moveGradient {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes profilePop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Sections */
