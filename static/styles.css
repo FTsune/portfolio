@@ -282,7 +282,7 @@ body.light-theme .nav-links a:hover {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Keyframe Animations */
@@ -602,6 +602,25 @@ section h2 {
     margin-right: 0.5rem;
 }
 
+/* Project Card Hover Animation */
+/* .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+} */
+
 /* Contact Section */
 .contact {
     background-color: var(--surface-color);
@@ -715,8 +734,14 @@ footer {
     }
 
     .content-wrapper {
+        padding: 1em; /* Added */
         padding-right: 1.5rem;
         border-right: 1px solid rgba(var(--text-color-rgb), 0.1);
+    }
+
+    /* Added */
+    .tab-description {
+        padding: 1em;
     }
 
     .hero-content {
