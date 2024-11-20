@@ -80,6 +80,37 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
+    // Tab functionality for About section
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabDescriptions = document.querySelectorAll('.tab-description');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tab = btn.dataset.tab;
+            
+            // Update active state for buttons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Show active content
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === `${tab}-content`) {
+                    content.classList.add('active');
+                }
+            });
+            
+            // Show active description
+            tabDescriptions.forEach(desc => {
+                desc.classList.remove('active');
+                if (desc.id === `${tab}-description`) {
+                    desc.classList.add('active');
+                }
+            });
+        });
+    });
+
     // Initialize Lucide icons
     lucide.createIcons();
 });
