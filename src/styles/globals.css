@@ -258,47 +258,113 @@ body.light-theme .hero {
     color: transparent;
 }
 
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.about-column {
+.about-container {
     background-color: var(--card-bg-color);
     border-radius: 8px;
-    padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 }
 
-.about-column h3 {
+.about-profile {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.school-logo-container {
+    flex: 0 0 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.school-logo {
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+}
+
+.profile-description {
+    flex: 1;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.about-divider {
+    height: 0.1px;
+    background-color: var(--text-color);
+    margin: 1rem 0;
+}
+
+.about-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.about-column h3 svg {
+.tab-icon {
     color: var(--primary-color);
 }
 
-.about-column ul {
+.tab.active {
+    color: var(--primary-color);
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.about-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.about-list {
+    flex: 1;
+}
+
+.about-list ul {
     list-style-type: none;
     padding-left: 1.5rem;
 }
 
-.about-column li {
+.about-list li {
     margin-bottom: 0.5rem;
     position: relative;
 }
 
-.about-column li::before {
+.about-list li::before {
     content: "•";
     color: var(--primary-color);
     position: absolute;
     left: -1rem;
+}
+
+.about-description {
+    flex: 1;
+    color: var(--text-color);
 }
 
 /* Projects Section */
@@ -526,6 +592,30 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 768px) {
+    .about-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .school-logo-container {
+        margin-bottom: 1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-tabs {
+        justify-content: center;
+    }
+
+    .school-logo {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
 @media (min-width: 768px) {
     .nav-links {
         display: flex;
@@ -569,13 +659,13 @@ footer {
         margin-right: 1rem;
     }
 
-    .about-content {
+    /* .about-content {
         flex-direction: row;
     }
 
     .about-column {
         flex: 1;
-    }
+    } */
 
     .project-grid {
         grid-template-columns: repeat(2, 1fr);

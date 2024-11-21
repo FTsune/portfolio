@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Sun, Moon, Menu } from 'lucide-react';
 
 const Header: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light'); // Changed default to 'light'
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    
     if (savedTheme) {
       setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+    } else {
+      // Default to light theme if no saved theme
       setTheme('light');
     }
 
