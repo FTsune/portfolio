@@ -82,9 +82,10 @@ body.light-theme .navbar.scrolled {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: inherit;
-    backdrop-filter: inherit;
-    -webkit-backdrop-filter: inherit;
+    background-color: var(--background-color);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links.active {
@@ -93,18 +94,20 @@ body.light-theme .navbar.scrolled {
 
 .nav-links li {
     margin: 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .nav-links a {
     color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
+    background-color: var(--hover-background-color);
 }
 
 .nav-right {
@@ -623,14 +626,21 @@ footer {
         width: auto;
         background-color: transparent;
         box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .nav-links li {
         margin-left: 1.5rem;
+        border-top: none;
     }
 
     .nav-links a {
         padding: 0;
+    }
+
+    .nav-links a:hover {
+        background-color: transparent;
     }
 
     .menu-toggle {
