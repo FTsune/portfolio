@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
               <div className="social-links">
                 <a href="https://github.com/FTsune" aria-label="GitHub"><Github /></a>
                 <a href="https://www.linkedin.com/in/franco-miguel-villamor-b58383337" aria-label="LinkedIn"><Linkedin /></a>
-                <a href="#" aria-label="Email"><Mail /></a>
+                <a href="https://x.com/ocnarff_" aria-label="Twitter"><Twitter /></a>
               </div>
               <button className="btn">Download CV</button>
             </div>
