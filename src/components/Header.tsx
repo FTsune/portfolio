@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Sun, Moon, Menu } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
@@ -24,12 +25,20 @@ const Header: React.FC = () => {
       }
     };
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
+    document.addEventListener('mousedown', handleClickOutside);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMenuOpen]);
 
@@ -46,14 +55,18 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav ref={navRef} className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <a href="#" className="logo">F</a>
         <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" onClick={handleLinkClick}>About</a></li>
+          <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
+          <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
         </ul>
         <div className="nav-right">
           <button onClick={toggleTheme} id="theme-toggle" aria-label="Toggle theme">
