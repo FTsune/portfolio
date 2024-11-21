@@ -484,6 +484,25 @@ section h2 {
     margin-right: 0.5rem;
 }
 
+/* Project Card Hover Animation */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
 /* Contact Section */
 .contact {
     background-color: var(--surface-color);
