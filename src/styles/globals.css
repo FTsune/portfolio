@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #f96868;
+    --primary-color: #6887f9;
     --secondary-color: #69d7fc;
     --background-color: #121212;
     --surface-color: #1e1e1e;
@@ -75,22 +75,35 @@ body.light-theme .navbar.scrolled {
     text-decoration: none;
 }
 
-.nav-links {
-    display: none;
-    list-style: none;
+.nav-links-container {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    text-align: center;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+}
+
+.nav-links-container.open {
+    height: auto;
+}
+
+.nav-links-container.animating .nav-links {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links {
+    list-style: none;
     background-color: var(--background-color);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
 }
 
-.nav-links.active {
-    display: block;
+.nav-links-container.open .nav-links {
+    transform: translateY(0);
 }
 
 .nav-links li {
@@ -370,6 +383,7 @@ body.light-theme .hero {
 .about-description {
     flex: 1;
     color: var(--text-color);
+    text-align: center;
 }
 
 /* Projects Section */
@@ -622,14 +636,20 @@ footer {
 }
 
 @media (min-width: 768px) {
-    .nav-links {
-        display: flex;
+    .nav-links-container {
         position: static;
         width: auto;
+        height: auto;
+        overflow: visible;
+    }
+
+    .nav-links {
+        display: flex;
         background-color: transparent;
         box-shadow: none;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
+        transform: none;
     }
 
     .nav-links li {

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Sun, Moon, Menu } from 'lucide-react';
 
-const Header: React.FC = () => {
+const Header = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -52,6 +53,7 @@ const Header: React.FC = () => {
   };
 
   const toggleMenu = () => {
+    setIsAnimating(true);
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -59,15 +61,21 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const handleTransitionEnd = () => {
+    setIsAnimating(false);
+  };
+
   return (
     <nav ref={navRef} className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <a href="#" className="logo">F</a>
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <li><a href="#about" onClick={handleLinkClick}>About</a></li>
-          <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
-          <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
-        </ul>
+        <div className={`nav-links-container ${isMenuOpen ? 'open' : ''} ${isAnimating ? 'animating' : ''}`}>
+          <ul className="nav-links" onTransitionEnd={handleTransitionEnd}>
+            <li><a href="#about" onClick={handleLinkClick}>About</a></li>
+            <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
+            <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>
+          </ul>
+        </div>
         <div className="nav-right">
           <button onClick={toggleTheme} id="theme-toggle" aria-label="Toggle theme">
             {theme === 'light' ? <Moon /> : <Sun />}
