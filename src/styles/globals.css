@@ -82,15 +82,17 @@ body.light-theme .navbar.scrolled {
     width: 100%;
     height: 0;
     overflow: hidden;
-    transition: height 0.3s ease-in-out;
+    transition: height 0.3s ease-in-out, visibility 0s linear 0.3s;
 }
 
 .nav-links-container.open {
     height: auto;
+    visibility: visible;
+    transition-delay: 0s;
 }
 
 .nav-links-container.animating .nav-links {
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .nav-links {
@@ -100,10 +102,18 @@ body.light-theme .navbar.scrolled {
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .nav-links-container.open .nav-links {
     transform: translateY(0);
+    opacity: 1;
+}
+
+.nav-links-container.animating .nav-links.closing {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 .nav-links li {
@@ -641,6 +651,7 @@ footer {
         width: auto;
         height: auto;
         overflow: visible;
+        visibility: visible;
     }
 
     .nav-links {
@@ -650,6 +661,7 @@ footer {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
         transform: none;
+        opacity: 1;
     }
 
     .nav-links li {

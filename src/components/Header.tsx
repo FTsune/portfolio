@@ -7,6 +7,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const navLinksRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
@@ -28,7 +29,7 @@ const Header = () => {
 
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
+        closeMenu();
       }
     };
 
@@ -52,16 +53,47 @@ const Header = () => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
-  const toggleMenu = () => {
-    setIsAnimating(true);
-    setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => {
+    if (isMenuOpen) {
+      setIsAnimating(true);
+      navLinksRef.current?.classList.add('closing');
+      setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 300); // Match this with CSS transition duration
+    }
   };
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
+  const toggleMenu = () => {
+    if (!isMenuOpen) {
+      setIsAnimating(true);
+      setIsMenuOpen(true);
+    } else {
+      closeMenu();
+    }
+  };
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    if (href?.startsWith('#')) {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        closeMenu();
+        const navHeight = navRef.current?.offsetHeight || 0;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
   };
 
   const handleTransitionEnd = () => {
+    if (!isMenuOpen) {
+      navLinksRef.current?.classList.remove('closing');
+    }
     setIsAnimating(false);
   };
 
@@ -70,7 +102,7 @@ const Header = () => {
       <div className="container">
         <a href="#" className="logo">F</a>
         <div className={`nav-links-container ${isMenuOpen ? 'open' : ''} ${isAnimating ? 'animating' : ''}`}>
-          <ul className="nav-links" onTransitionEnd={handleTransitionEnd}>
+          <ul ref={navLinksRef} className="nav-links" onTransitionEnd={handleTransitionEnd}>
             <li><a href="#about" onClick={handleLinkClick}>About</a></li>
             <li><a href="#projects" onClick={handleLinkClick}>Projects</a></li>
             <li><a href="#contact" onClick={handleLinkClick}>Contact</a></li>

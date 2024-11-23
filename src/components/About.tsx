@@ -12,10 +12,14 @@ const About: React.FC = () => {
 
   const skills = [
     "Python",
-    "Data Science", 
-    "Machine/Deep Learning",
+    "Data Science",
+    "Machine/Deep Learning", 
+    "Tensorflow",
+    "Pytorch",
     "C#",
-    "Java"
+    "Computer Vision",
+    "Data Visualization",
+    "Flask"
   ];
 
   const achievements = [
