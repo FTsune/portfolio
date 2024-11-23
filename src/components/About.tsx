@@ -62,21 +62,23 @@ const About: React.FC = () => {
           {/* Profile Section */}
           <div className="about-profile">
             <div className="school-logo-container">
-              <img 
-                src="/images/faith-logo.png" 
-                alt="First Asia Institute of Technology and Humanities Logo" 
-                className="school-logo"
-              />
+              <div className="logo-wrapper">
+                <img 
+                  src="/images/faith-logo.png" 
+                  alt="First Asia Institute of Technology and Humanities Logo" 
+                  className="school-logo"
+                />
+                <span className="year-range">2021-2025</span>
+              </div>
             </div>
             <div className="profile-description">
               <p>{profileDescription.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
             </div>
           </div>
 
-          {/* Divider */}
+          {/* Rest of the component remains the same */}
           <div className="about-divider"></div>
 
-          {/* Tabs */}
           <div className="about-tabs">
             <button 
               className={`tab ${activeTab === 'skills' ? 'active' : ''}`}
@@ -92,9 +94,7 @@ const About: React.FC = () => {
             </button>
           </div>
 
-          {/* Content Area */}
           <div className="about-content">
-            {/* Left Column - List */}
             <AnimatePresence mode="wait">
               <motion.div 
                 key={activeTab}
@@ -137,7 +137,6 @@ const About: React.FC = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Right Column - Description */}
             <AnimatePresence mode="wait">
               <motion.div 
                 key={activeTab + '-description'}
