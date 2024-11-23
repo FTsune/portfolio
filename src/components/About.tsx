@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'skills' | 'achievements'>('skills');
 
-  const profileDescription = "I am currently a 4th-year student at the First Asia Institute of Technology and Humanities, pursuing a Bachelor of Science in Computer Science (BSCS). Throughout my academic journey, I have gained a strong foundation in programming, algorithms, data structures, and software development.";
+  const profileDescription = "I am currently a 4th-year student at the First Asia Institute of Technology and Humanities, pursuing a Bachelor of Science in Computer Science (BSCS). Throughout my academic journey, I have gained a strong foundation in programming, algorithms, data structures, software development, and data science.";
 
   const skillsDescription = "I am passionate about technology and continuously strive to enhance my technical abilities. Here are some of the skills I have developed through academic study and hands-on projects.";
   const achievementsDescription = "My hard work and dedication have been recognized through various academic achievements and certifications. Here are some of my key accomplishments.";
