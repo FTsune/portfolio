@@ -36,21 +36,21 @@ const Projects: React.FC = () => {
         </p>
         <div className="project-grid">
           <ProjectCard
-            image="/images/brewguard.png"
+            image="/images/brewguard2.png"
             title="BrewGuard"
             description="A coffee leaf classification and disease detection web app made with Streamlit."
             demoLink="https://brewguard.streamlit.app"
             githubLink="https://github.com/FTsune/kape"
           />
           <ProjectCard
-            image="/images/snapfolia.png"
+            image="/images/snapfolia2.png"
             title="Snapfolia"
             description="A leaf classification web app made by BSCS students."
             demoLink="https://trees.firstasia.edu.ph/"
             githubLink="https://github.com/CHlNlTO/snapfolia"
           />
           <ProjectCard
-            image="/images/anime.png"
+            image="/images/anime2.png"
             title="RU Seasonal Anime Poll"
             description="A seasonal anime voting system app made with Django."
             githubLink="https://github.com/FTsune/Anime-Voting-System"

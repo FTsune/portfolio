@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #6887f9;
+    --primary-color: #68e3f9;
     --secondary-color: #69d7fc;
     --background-color: #121212;
     --surface-color: #1e1e1e;
@@ -267,7 +267,7 @@ body.light-theme .hero {
 
 .social-links a:hover {
     transform: translateY(-3px);
-    color: #ff4444;
+    color: rgb(1, 96, 228);
 }
 
 /* About Section */
@@ -280,10 +280,11 @@ body.light-theme .hero {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    background: linear-gradient(to right, red, blue);
+    font-weight: 600;
+    /* background: linear-gradient(to right, red, blue);
     background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; */
+    color: var(--primary-color);
 }
 
 .about-container {
@@ -418,10 +419,11 @@ body.light-theme .hero {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    background: linear-gradient(to right, red, blue);
+    font-weight: 600;
+    /* background: linear-gradient(to right, red, blue);
     background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; */
+    color: var(--primary-color);
 }
 
 .projects-description {
@@ -463,7 +465,7 @@ body.light-theme .hero {
 
 .project-card h3 {
     padding: 1rem;
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .project-card p {
@@ -479,7 +481,7 @@ body.light-theme .hero {
 
 .btn {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: rgb(1, 96, 228);
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -492,20 +494,20 @@ body.light-theme .hero {
 
 .btn:hover {
     background-color: #1e1e1e;
-    color: var(--primary-color);
+    color: rgb(1, 96, 228);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline {
     background-color: transparent;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
 }
 
 .btn-outline:hover {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 .view-more {
@@ -523,7 +525,7 @@ body.light-theme .hero {
 }
 
 .view-more-link:hover {
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .github-icon {
@@ -531,6 +533,80 @@ body.light-theme .hero {
     height: 24px;
     margin-right: 0.5rem;
 }
+
+/* Modal */
+/*
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--background-color);
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  color: var(--text-color);
+  text-align: center;
+  position: relative;
+}
+
+.modal-header {
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.close-button {
+    color: var(--text-color);
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.modal-links {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 0 10px;
+} */
 
 /* Contact Section */
 .contact {
@@ -542,10 +618,11 @@ body.light-theme .hero {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
-    background: linear-gradient(to right, red, blue);
+    font-weight: 600;
+    /* background: linear-gradient(to right, red, blue);
     background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; */
+    color: var(--primary-color);
 }
 
 .contact-info {
