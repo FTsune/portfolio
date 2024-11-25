@@ -2,21 +2,37 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Sun, Moon, Menu } from 'lucide-react';
 
 const Header = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  // Initialize theme state from localStorage or system preference
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    // Check localStorage first
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (savedTheme) {
+      return savedTheme;
+    }
+    
+    // If no saved theme, check system preference
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    
+    // Default to light if no saved theme or system preference
+    return 'light';
+  });
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const navLinksRef = useRef<HTMLUListElement>(null);
 
+  // Apply theme immediately on mount and when theme changes
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      setTheme('light');
-    }
+    document.body.classList.remove('light-theme', 'dark-theme');
+    document.body.classList.add(`${theme}-theme`);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -44,13 +60,11 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  useEffect(() => {
-    document.body.classList.toggle('light-theme', theme === 'light');
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setTheme(prevTheme => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      return newTheme;
+    });
   };
 
   const closeMenu = () => {
@@ -59,7 +73,7 @@ const Header = () => {
       navLinksRef.current?.classList.add('closing');
       setTimeout(() => {
         setIsMenuOpen(false);
-      }, 300); // Match this with CSS transition duration
+      }, 300);
     }
   };
 
