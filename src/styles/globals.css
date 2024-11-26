@@ -1,6 +1,6 @@
 :root {
     --primary-color: rgb(1, 96, 228);
-    --secondary-color: #69d7fc;
+    --secondary-color: #737373;
     --background-color: #ffffff;
     --surface-color: #f5f5f5;
     --text-color: #333333;
@@ -10,7 +10,7 @@
   
   body.dark-theme {
     --primary-color: #68e3f9;
-    --secondary-color: #69d7fc;
+    --secondary-color: #a3a3a3;
     --background-color: #121212;
     --surface-color: #1e1e1e;
     --text-color: #e0e0e0;
@@ -443,6 +443,23 @@
     color: var(--text-color) !important;
     margin-bottom: 1rem;
   }
+
+  /* Paragraph */
+  .modal-content > .modal-scroll-area > p {
+    color: var(--secondary-color);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+/* Lists */
+  .modal-content > .modal-scroll-area > ul li {
+    color: var(--secondary-color);
+    padding: 0.35rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+  }
   
   /* Make button styles more specific */
   .modal-content .modal-links .btn {
@@ -689,7 +706,7 @@
   
   .project-card p {
     padding: 0 1rem 1rem;
-    color: var(--text-color);
+    color: var(--secondary-color);
   }
   
   .project-links {
@@ -752,17 +769,6 @@
     height: 24px;
     margin-right: 0.5rem;
   }
-  
-  /* Modal
-  .dialog-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-  }
-    
-  .dialog-content {
-    background-color: var(--card-bg-color);
-    border: 1px solid var(--muted-color);
-  } */
   
   /* Contact Section */
   .contact {
