@@ -451,15 +451,6 @@
     margin-bottom: 1.25rem;
     font-size: 0.9rem;
   }
-
-/* Lists */
-  .modal-content > .modal-scroll-area > ul li {
-    color: var(--secondary-color);
-    padding: 0.35rem 0;
-    display: flex;
-    align-items: center;
-    font-size: 0.9rem;
-  }
   
   /* Make button styles more specific */
   .modal-content .modal-links .btn {
@@ -611,7 +602,7 @@
   }
   
   .modal-content li {
-    color: var(--text-color);
+    color: var(--secondary-color);
     padding: 0.375rem 0;
     display: flex;
     align-items: center;
