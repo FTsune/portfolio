@@ -9,7 +9,7 @@
   }
   
   body.dark-theme {
-    --primary-color: #68e3f9;
+    --primary-color: rgb(1, 96, 228);
     --secondary-color: #a3a3a3;
     --background-color: #121212;
     --surface-color: #1e1e1e;
@@ -72,7 +72,7 @@
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
   }
   
@@ -165,10 +165,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.1) 0%, transparent 30%),
-    radial-gradient(circle at 80% 80%, rgba(0, 0, 255, 0.1) 0%, transparent 30%),
-    white;
+    background: white;
   }
   
   body.dark-theme .hero {
