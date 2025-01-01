@@ -16,10 +16,10 @@ const About: React.FC = () => {
     "Machine/Deep Learning", 
     "Tensorflow",
     "Pytorch",
-    "C#",
+    "Flask",
     "Computer Vision",
     "Data Visualization",
-    "Flask"
+    "C#",
   ];
 
   const achievements = [
