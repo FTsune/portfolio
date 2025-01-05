@@ -20,6 +20,7 @@ const About: React.FC = () => {
     "Computer Vision",
     "Data Visualization",
     "C#",
+    "MySQL"
   ];
 
   const achievements = [
@@ -27,7 +28,8 @@ const About: React.FC = () => {
     "Academic Year 2022-2023 2nd Semester Dean's Lister", 
     "Academic Year 2023-2024 President's Lister",
     "Certified CompTIA ITF+ 2024 Exam Passer",
-    "Top 15 Finalist, DICT IV-A Regional Pitching Competition"
+    "Top 15 Finalist, DICT IV-A Regional Pitching Competition",
+    "10th TOPCIT Philippines Level 2 Certification"
   ];
 
   const listVariants = {
