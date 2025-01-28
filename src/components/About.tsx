@@ -11,22 +11,23 @@ const About: React.FC = () => {
   const achievementsDescription = "My hard work and dedication have been recognized through various academic achievements and certifications. Here are some of my key accomplishments.";
 
   const skills = [
-    "Python",
+    "Artificial Intelligence",
     "Data Science",
-    "Machine/Deep Learning", 
-    "Tensorflow",
-    "Pytorch",
-    "Flask",
+    "Machine Learning", 
+    "Neural Networks",
+    "Software Development",
+    "Natural Language Processing",
     "Computer Vision",
     "Data Visualization",
-    "C#",
-    "MySQL"
+    "Data Analysis",
+    "Relational Database"
   ];
 
   const achievements = [
     "Academic Year 2021-2022 Dean's Lister",
     "Academic Year 2022-2023 2nd Semester Dean's Lister", 
     "Academic Year 2023-2024 President's Lister",
+    "Academic Year 2024-2025 President's Lister",
     "Certified CompTIA ITF+ 2024 Exam Passer",
     "Top 15 Finalist, DICT IV-A Regional Pitching Competition",
     "10th TOPCIT Philippines Level 2 Certification"
