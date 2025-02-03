@@ -20,7 +20,7 @@ const About: React.FC = () => {
     "Computer Vision",
     "Data Visualization",
     "Data Analysis",
-    "Relational Database"
+    "Large Language Models"
   ];
 
   const achievements = [
