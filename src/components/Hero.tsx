@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
     <header className="hero">
       <div className="container">
         <div className="hero-content">
-          <img src="/images/franco.jpg" alt="Franco" className="profile-img" />
+          <img src="/images/franco.png" alt="Franco" className="profile-img" />
           <div className="hero-text">
             <h1>Franco</h1>
             <p className="subtitle">BS Computer Science</p>
